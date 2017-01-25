@@ -1,4 +1,5 @@
 <?php
+require_once("helper.php");
 $query =   (!empty($_GET['term'])) ? $_GET['term'] : '09320475';
 $query1 = rawurlencode ($query);
 $curl = curl_init();
@@ -32,6 +33,10 @@ if ($err) {
     $counter = 1; 
     $arrs = array();
     $data = [];
+//    print "<pre>";
+//    print_r($arr_json);
+//    print "</pre>";
+
      foreach ($arr_json['items'] as $key => $value) {  
       if (array_key_exists('resigned_on', $value)) {
          unset($arrs[$i]);
@@ -40,12 +45,20 @@ if ($err) {
           unset($arrs[$i]);
           $arrs[$i] = empty($arrs[$i]);
         } else {
-           $ak = array('namesss' => $value['name']);  
+            $ak = array('namesss' => $value['name'], 'officer_role' => $value['officer_role']);
             $arrs[$i] = $ak;
-            $data[] = $ak; 
+            $data[] = $ak;
           }
       $i++;
     }
-    echo json_encode( $data );
+    //    print "<pre>";
+    //    print_r($data);
+    //    exit;
+    //    echo json_encode(  $data );
+    //    print "<Br>";
+    $data = bpc_removeDuplicateIfNotDirector($data);
+    //    print_r($data);
+    //    print "<br>";
+    echo json_encode(  $data );
 }
 ?>
