@@ -1,0 +1,16 @@
+
+Hi Rich, 
+
+Update for Jan  24, 2017
+Add table row for updated_at 
+make updated_at auto created when plugin is activated
+when hit button update then updated_at table row will updated too
+fix ui alignment for bpc step 2 company name and field
+align the address
+align left the officers names results
+add icon for "my name is not listed here" and add >> and underline to make it look like a link
+change name directors to officers 
+
+Todo Jan 25, 2017
+ 
+Will continue bpc ui and other functions
