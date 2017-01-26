@@ -37,10 +37,10 @@ function bpc_partner_time_func() {
 		if ( $("#callbackdate").val().length > 0 ) {
 				document.getElementById('datepicked').innerHTML = $datenow;
 				document.getElementById('timeselected').innerHTML = ($("input[name=time]:checked").val());
-				jQuery('.home-step-2').delay(1500).slideDown(500);
-				jQuery('.home-step-1').delay(1500).slideUp(500);
-				jQuery('.home-step-3').delay(1500).slideUp(500);
-				jQuery('.home-step-4').delay(1500).slideUp(500);
+				jQuery('.home-step-2').delay(500).slideDown(500);
+				jQuery('.home-step-1').delay(500).slideUp(500);
+				jQuery('.home-step-3').delay(500).slideUp(500);
+				jQuery('.home-step-4').delay(500).slideUp(500);
 		}	
 	}
 	</script>
