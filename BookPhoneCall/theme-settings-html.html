@@ -1,4 +1,22 @@
+http://bookphonecall.com/wp-content/uploads/2017/01/favicon.png
+
+
+
+
+
+
+empty
+
+
+
+
+
+
 http://bookphonecall.com/wp-content/uploads/2017/01/header-title-1.png
+
+
+
+
 
 
 
@@ -6,7 +24,13 @@ Header Banner 1024x100 Pixel
 
 
 
+
+
+
+
+
 uncategorized
+
 
 
 
@@ -28,11 +52,9 @@ uncategorized
 
 
 
-
-
-
 <h3>Choose Date</h3>
 <div class="home-calendar"> <img src="http://localhost:8080/BookPhoneCall/wp-content/themes/BookPhoneCall/images/calendar.png" alt="calendar image" width="417" height="364"> </div>
+
 
 
 
@@ -111,9 +133,8 @@ uncategorized
 
 
 
-
-
 STEP 2: Enquiry Type
+
 
 
 
@@ -135,14 +156,15 @@ STEP 2: Enquiry Type
 
 
 
-blank
+#
 
 
 
 
 
-bank
 
+
+#
 
 
 
@@ -178,7 +200,6 @@ bank
 
 
 STEP 3: Choose Method
-
 
 
 
@@ -224,16 +245,16 @@ STEP 3: Choose Method
             <td style="width: 50%;">
                 <div class="home-step-3-form-wrapper" id="directordiv">
                     <div style="display:none;" id="director_column_q">
-                        <!-- <div class="home-step-3-form-img" style="margin:0 auto 20px;">
-                          <img src="http://bookphonecall.com/wp-content/uploads/2016/12/ltd-company.png" style="display:block; margin:0 auto;" width="100" height="100">
-                        </div> -->
+                        <div class="home-step-3-form-img" style="margin:0 auto 20px;">
+                            <img class="aligncenter" src="http://bookphonecall.com/wp-content/uploads/2016/12/ltd-company.png" style="display:block; margin:0 auto;" width="100" height="100">
+                        </div>
                         <div class="home-step-3-form-label"><p>Are you a Director of this Company?</p></div>
                         <p style="clear: both;">
                             <input id="director_yes" name="director" value="Yes" type="radio">Yes
                             <input id="director_no" name="director" value="No" type="radio">No
                         </p>
                     </div>
-                    <p id="director_name_container" style="display:none;">Officers Name: <input id="director_name" name="director_name" value="" autocomplete="off" placeholder=">> Enter Your Name Here <<" style="width: 70%;" /></p>
+                    <p id="director_name_container" style="display:none;">Officers Name: <input id="director_name" style="text-transform: capitalize;" name="director_name" value="" autocomplete="off" placeholder=">> Enter Your Name Here <<" style="width: 70%;" /></p>
                     <div id="name_container" style="display:none;">
                         <p id="company_officers_name" style="display:none;"></p>
                         <p id="name_not_listed" style="display:none;"><img src="http://bookphonecall.com/wp-content/uploads/2017/01/icon-question.png">My Name is Not Listed Here >></p>
@@ -254,6 +275,7 @@ STEP 3: Choose Method
 
 
 
+
 STEP 4: Confirm Appointment
 
 
@@ -261,8 +283,93 @@ STEP 4: Confirm Appointment
 
 
 
+
 <h3>Consumer</h3>
-<li>Title</li>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align: left;">Title</th>
+        <th style="text-align: left;">First Name</th>
+        <th style="text-align: left;">Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <select name="title" id="e3ve-title">
+                <option value="Mr">Mr</option>
+                <option value="Ms">Ms</option>
+                <option value="Miss">Miss</option>
+                <option value="Mrs">Mrs</option>
+            </select>
+        </td>
+        <td>
+            <input name="firstname" type="text" id="e3ve-first-name">
+        </td>
+        <td>
+            <input name="lastname" type="text" id="e3ve-last-name">
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table style="width: 100%;">
+    <thead>
+    <tr>
+        <th style="text-align: left;">Email Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <input name="email" type="email" id="e3ve-email" style="width: 70%;">
+            <input name="fbemail" type="hidden" id="e3ve-fbemail">
+            <input name="gender" type="hidden" id="e3ve-gender">
+            <input name="birthday" type="hidden" id="e3ve-birthday">
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table style="width: 100%;">
+    <thead>
+    <tr>
+        <th style="text-align: left;">Call me on:</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <select name="contact1" onchange='bpccheckvalue1(this.value)'>
+                <option>Please select...</option>
+                <option value="mobilecontact1">Mobile Phone</option>
+                <option value="homecontact1">Home Phone</option>
+                <option value="officecontact1">Office Phone</option>
+            </select><input type="text" name="contactname1" id="contact11" style='display:none'/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select name="contact2" onchange='bpccheckvalue2(this.value)'>
+                <option>Please select...</option>
+                <option value="mobilecontact2">Mobile Phone</option>
+                <option value="homecontact2">Home Phone</option>
+                <option value="officecontact2">Office Phone</option>
+            </select><input type="text" name="contactname2" id="contact22" style='display:none'/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select name="contact3" onchange='bpccheckvalue3(this.value)'>
+                <option>Please select...</option>
+                <option value="mobilecontact3">Mobile Phone</option>
+                <option value="homecontact3">Home Phone</option>
+                <option value="officecontact3">Office Phone</option>
+            </select><input type="text" name="contactname3" id="contact33" style='display:none'/>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- <li>Title</li>
 <li>
     <select name="title" id="e3ve-title">
         <option value="Mr">Mr</option>
@@ -285,7 +392,7 @@ STEP 4: Confirm Appointment
     <input name="fbemail" type="hidden" id="e3ve-fbemail">
 </li>
 <li><input name="gender" type="hidden" id="e3ve-gender"></li>
-<li><input name="birthday" type="hidden" id="e3ve-birthday"></li>
+<li><input name="birthday" type="hidden" id="e3ve-birthday"></li> -->
 
 
 
@@ -295,49 +402,46 @@ STEP 4: Confirm Appointment
 
 
 
+<table style="width: 100%;">
+    <thead>
+    <tr>
+        <th style="text-align: center;">Enquiry Type</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align: center;">
+            <select name="enquirytype">
+                <option value="">Please select...</option>
+                <option value="sales-enquiry">Sales Enquiry</option>
+                <option value="customer-service">Customer Services</option>
+                <option value="accounts">Accounts</option>
+                <option value="complaint">Complaint</option>
+                <option value="other">Other</option>
+            </select>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table style="width: 100%;">
+    <thead>
+    <tr>
+        <th style="text-align: left;">Your Enquiry</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <textarea name="yourenquiry" style="width: 100%; height: 100px;">Write you enquiries here...</textarea></td></tr></tbody></table>
 
 
-<h3>Call Back Number</h3>
-<li>Call me on:</li>
-<li>
-    <select name="contact1" onchange='bpccheckvalue1(this.value)'>
-        <option>Please select...</option>
-        <option value="mobilecontact1">Mobile Phone</option>
-        <option value="homecontact1">Home Phone</option>
-        <option value="officecontact1">Office Phone</option>
-    </select><input type="text" name="contactname1" id="contact11" style='display:none'/>
-</li>
-<li>
-    <select name="contact2" onchange='bpccheckvalue2(this.value)'>
-        <option>Please select...</option>
-        <option value="mobilecontact2">Mobile Phone</option>
-        <option value="homecontact2">Home Phone</option>
-        <option value="officecontact2">Office Phone</option>
-    </select><input type="text" name="contactname2" id="contact22" style='display:none'/>
-</li>
-<li>
-    <select name="contact3" onchange='bpccheckvalue3(this.value)'>
-        <option>Please select...</option>
-        <option value="mobilecontact3">Mobile Phone</option>
-        <option value="homecontact3">Home Phone</option>
-        <option value="officecontact3">Office Phone</option>
-    </select><input type="text" name="contactname3" id="contact33" style='display:none'/>
-</li>
-<li>Enquiry Type</li>
-<li>
-    <select name="enquirytype">
-        <option value="">Please select...</option>
-        <option value="sales-enquiry">Sales Enquiry</option>
-        <option value="customer-service">Customer Services</option>
-        <option value="accounts">Accounts</option>
-        <option value="complaint">Complaint</option>
-        <option value="other">Other</option>
-    </select>
-</li>
-<li>Your Enquiry</li>
-<li>
-    <textarea name="yourenquiry">Write you enquiries here...
 
+
+
+
+
+
+I have read & agree to the Terms & Conditions and Privacy Policy
 
 
 
@@ -347,17 +451,4 @@ STEP 4: Confirm Appointment
 
 
 
-
-
-
-        I have read & agree to the Terms & Conditions and Privacy Policy
-
-
-
-
-
-
-
-
-
-        © 2016 BookPhoneCall.com. All rights reserved.
+© 2016 BookPhoneCall.com. All rights reserved.
