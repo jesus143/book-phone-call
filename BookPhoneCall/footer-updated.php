@@ -81,10 +81,10 @@ jQuery(document).ready(function(){
 	});
 
 
-	alert("working now");
+
 	console.log("click now");
 
-	$( '.proceed-btn-3' ).trigger( "click" );
+	$( '.proceed-btn-2' ).trigger( "click" );
 });
 
 //Page Resizing

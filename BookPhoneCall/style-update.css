@@ -3265,11 +3265,15 @@ div#address_snippet, div#name_container {
 
 /*Custom css*/
 
-/*
-.home-step-3 { display:block; }
-.home-step-1,.home-step-2, .home-step-4 {display:block; } 
 
-.bpc-page-4-footer { 
+.home-step-3 { display:block; }
+.home-step-1,.home-step-2, .home-step-4 {display:block; }
+
+
+
+
+.bpc-page-4-footer {
+	/* border: 1px solid red; */
 }
 .bpc-page-4-footer ul {
 	padding: 3px;
@@ -3287,8 +3291,10 @@ div#address_snippet, div#name_container {
 }
 
 .bpc-page-4-footer-right-content ul li {
-	width: 100%; 
-	text-align: center; 
+	width: 100%;
+	/* border: 1px solid red; */
+	text-align: center;
+	/* padding-bottom: 20px; */
 }
 
 .bpc-page-4-footer-right-content ul li select {
@@ -3300,7 +3306,7 @@ div#address_snippet, div#name_container {
 	width: 500px;
 	height: 100px;
 	resize: none;
-}*/
+}
 
 
 

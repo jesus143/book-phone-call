@@ -54,7 +54,7 @@ if ($err) {
     //    print "<pre>";
     //    print_r($data);
     //    exit;
-    //    echo json_encode(  $data );
+    // echo json_encode(  $data );
     //    print "<Br>";
     $data = bpc_removeDuplicateIfNotDirector($data);
     //    print_r($data);
