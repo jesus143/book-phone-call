@@ -98,6 +98,8 @@
         document.getElementById('contact33').style.display='inline'; 
   }
 
+  
+
 $(document).ready(function(){
 
   $( "#company" ).keyup(function(e) {
@@ -128,13 +130,24 @@ $(document).ready(function(){
             for (var i = 0; i < data.length; i++) {
             var  t =  data[i]['namesss'];
             var n = t.indexOf("'");
+              function ucFirst(string) {
+                  return string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase();
+                }
+
+                var capitalize_officers = ucFirst(data[i]['namesss']);
+                var format_change_officers = capitalize_officers.split(',')[0];
+                var format_change_officers_after = capitalize_officers.split(',')[1] + ' ' + capitalize_officers.split(',')[0];
+              
               if( n === -1) {
-                document.getElementById('company_officers_name').innerHTML += "<p style='cursor: pointer;' name='officersname' id='company_officers_name_radio' onclick=myFunction('"+i+"') /><img src='http://bookphonecall.com/wp-content/uploads/2016/12/ltd-company.png' width='15' />" + data[i]['namesss'] + "</p>";
-                document.getElementById('company_officers_name').innerHTML += "<input type='hidden' value='"+ data[i]['namesss'] +"' id='company_officers_name_text_"+i+"' />";     
+                document.getElementById('company_officers_name').innerHTML += "<p style='cursor: pointer; text-transform: capitalize;' name='officersname' id='company_officers_name_radio' onclick=myFunction('"+i+"') /><img src='http://bookphonecall.com/wp-content/uploads/2016/12/ltd-company.png' width='15' />" + format_change_officers_after +  "</p>";
+                document.getElementById('company_officers_name').innerHTML += "<input type='hidden' style='text-transform: capitalize;' value='"+ format_change_officers_after + "' id='company_officers_name_text_"+i+"' />";     
               } else {
                 var strnameString = t.replace(/'/g, "&#8217;");
-                document.getElementById('company_officers_name').innerHTML += "<p style='cursor: pointer;' name='officersname' id='company_officers_name_radio' onclick=myFunction('"+i+"') /><img src='http://bookphonecall.com/wp-content/uploads/2016/12/ltd-company.png' width='15' />" + data[i]['namesss'] + "</p>";
-                document.getElementById('company_officers_name').innerHTML += "<input type='hidden' value='"+ strnameString +"' id='company_officers_name_text_"+i+"' />";         
+                var capitalize_officers_converted_quote = ucFirst(strnameString);
+                var format_change_officers_converted_quote = capitalize_officers_converted_quote.split(',')[0];
+                var format_change_officers_after_converted_quote = capitalize_officers_converted_quote.split(',')[1] + ' ' + capitalize_officers_converted_quote.split(',')[0];
+                document.getElementById('company_officers_name').innerHTML += "<p style='cursor: pointer; text-transform: capitalize;' name='officersname' id='company_officers_name_radio' onclick=myFunction('"+i+"') /><img src='http://bookphonecall.com/wp-content/uploads/2016/12/ltd-company.png' width='15' />" + format_change_officers_after + "</p>";
+                document.getElementById('company_officers_name').innerHTML += "<input type='hidden' style='text-transform: capitalize;' value='"+ format_change_officers_after_converted_quote + "' id='company_officers_name_text_"+i+"' />";         
               }
             }
         });
@@ -177,12 +190,12 @@ $(document).ready(function(){
               if ( $("#callbackdate").val().length > 0 ) {
                 document.getElementById('datepicked1').innerHTML = $datenow;
                 document.getElementById('timeselected1').innerHTML = ($("input[name=time]:checked").val());
-                jQuery('.home-step-3').delay(1500).slideDown(500);
-                jQuery('.home-step-1').delay(1500).slideUp(500);
-                jQuery('.home-step-2').delay(1500).slideUp(500);
-                jQuery('.home-step-4').delay(1500).slideUp(500);
+                jQuery('.home-step-3').delay(500).slideDown(500);
+                jQuery('.home-step-1').delay(500).slideUp(500);
+                jQuery('.home-step-2').delay(500).slideUp(500);
+                jQuery('.home-step-4').delay(500).slideUp(500);
               }
-            }, 1000);
+            }, 500);
 
     }
     else if($("#ltdcompany").is(":checked")){
@@ -214,20 +227,6 @@ $(document).ready(function(){
     }
   });
 
-
-
-  // $("input[name='verifycompany']").click(function(){
-  //   if($("#verifycompany").is(":checked")){ 
-  //     document.getElementById('director_column_q').style.display='block';
-  //   } else {
-  //     document.getElementById('director_column_q').style.display='none';
-  //     document.getElementById('director_name_container').style.display='none'; 
-  //     document.getElementById('name_container').style.display='none';
-  //     document.getElementById('company_officers_name').style.display='none';
-  //     document.getElementById('name_not_listed').style.display='none';
-  //   }
-  // });
-
   $("#verifycompany").click(function(){
     document.getElementById('director_column_q').style.display='block';
   });
@@ -248,12 +247,12 @@ $(document).ready(function(){
           if ( $("#callbackdate").val().length > 0 ) {
             document.getElementById('datepicked1').innerHTML = $datenow;
             document.getElementById('timeselected1').innerHTML = ($("input[name=time]:checked").val());
-            jQuery('.home-step-3').delay(1500).slideDown(500);
-            jQuery('.home-step-1').delay(1500).slideUp(500);
-            jQuery('.home-step-2').delay(1500).slideUp(500);
-            jQuery('.home-step-4').delay(1500).slideUp(500);
+            jQuery('.home-step-3').delay(500).slideDown(500);
+            jQuery('.home-step-1').delay(500).slideUp(500);
+            jQuery('.home-step-2').delay(500).slideUp(500);
+            jQuery('.home-step-4').delay(500).slideUp(500);
           }
-        }, 1000);
+        }, 500);
 
     }
   });
@@ -271,12 +270,12 @@ function myFunction(id)
     if ( $("#callbackdate").val().length > 0 ) {
       document.getElementById('datepicked1').innerHTML = $datenow;
       document.getElementById('timeselected1').innerHTML = ($("input[name=time]:checked").val());
-      jQuery('.home-step-3').delay(1500).slideDown(500);
-      jQuery('.home-step-1').delay(1500).slideUp(500);
-      jQuery('.home-step-2').delay(1500).slideUp(500);
-      jQuery('.home-step-4').delay(1500).slideUp(500);
+      jQuery('.home-step-3').delay(500).slideDown(500);
+      jQuery('.home-step-1').delay(500).slideUp(500);
+      jQuery('.home-step-2').delay(500).slideUp(500);
+      jQuery('.home-step-4').delay(500).slideUp(500);
     }
-  }, 1000);
+  }, 500);
 }
 
 

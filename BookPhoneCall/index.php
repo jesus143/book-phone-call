@@ -42,7 +42,7 @@
         <?php //echo get_option('of_step1left') ?> 
         <h3>Choose Date</h3>
         <div id="datepicker"></div>
-        <p style="display: block;">Date Choosen: <input type="text" name="callbackdate" id="callbackdate"></p>
+        <p style="display: none;">Date Choosen: <input type="text" name="callbackdate" id="callbackdate"></p>
       </div>
       <div id="home-arrow-1"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-arrow.png" alt="" width="" height=""></div>
       <div id="home-time">
@@ -62,7 +62,7 @@
         <h2><?php echo get_option('of_step2heading') ?></h2>
       </div>
       <div class="home-step-3-content-container"> <?php echo get_option('of_step3content') ?>
-        <div class="proceed-btn-3">Confirm Enquiry Type</div>
+        <!--<div class="proceed-btn-3">Confirm Enquiry Type</div>-->
       </div>
     </div>
     <div id="home-content-inner" class="home-step-3">
@@ -117,7 +117,7 @@
             <?php echo get_option('of_step4left') ?>
           </ul>
           <ul class="ca-fields-inner-right">
-            <?php echo get_option('of_step4right') ?>
+            <?php echo get_option('of_step4right') ?> 
           </ul>
         </div>
         <div class="bpc-agreement-input">

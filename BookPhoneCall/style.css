@@ -3263,44 +3263,6 @@ div#address_snippet, div#name_container {
 
 
 
-/*Custom css*/
-
-/*
-.home-step-3 { display:block; }
-.home-step-1,.home-step-2, .home-step-4 {display:block; } 
-
-.bpc-page-4-footer { 
-}
-.bpc-page-4-footer ul {
-	padding: 3px;
-	margin: 0px;
-}
-.bpc-page-4-footer ul li {
-	list-style: none;
-}
-
-.bpc-page-4-footer ul li input, .bpc-page-4-footer ul li select {
-	padding: 5px;
-}
-.bpc-page-4-footer ul li input[type="email"] {
-	width: 383px;
-}
-
-.bpc-page-4-footer-right-content ul li {
-	width: 100%; 
-	text-align: center; 
-}
-
-.bpc-page-4-footer-right-content ul li select {
-	width: 300px;
-	padding: 5px;
-}
-
-.bpc-page-4-footer-right-content ul li textarea {
-	width: 500px;
-	height: 100px;
-	resize: none;
-}*/
-
+/*Custom css*/ 
 
 
