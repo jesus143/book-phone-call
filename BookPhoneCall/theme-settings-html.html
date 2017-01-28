@@ -339,30 +339,28 @@ STEP 4: Confirm Appointment
     <tr>
         <td>
             <select name="contact1" onchange='bpccheckvalue1(this.value)'>
-                <option>Please select...</option>
-                <option value="mobilecontact1">Mobile Phone</option>
-                <option value="homecontact1">Home Phone</option>
-                <option value="officecontact1">Office Phone</option>
-            </select><input type="text" name="contactname1" id="contact11" style='display:none'/>
+                <option value="Please Select..." >Please Select...</option>
+                <option value="Mobile Phone">Mobile Phone</option>
+                <option value="Home Phone">Home Phone</option>
+                <option value="Office Phone">Office Phone</option>
+            </select><input type="text" name="contactname1" id="contact11" style='display:none' onkeyup="bpc_contact_ino_dd_field_1(this.value)" />
+
+            <br/>
+            <div style="display:none" id="bpc_backup_number_text" >
+                <p>Back up number</p>
+            </div>
         </td>
     </tr>
     <tr>
         <td>
-            <select name="contact2" onchange='bpccheckvalue2(this.value)'>
-                <option>Please select...</option>
-                <option value="mobilecontact2">Mobile Phone</option>
-                <option value="homecontact2">Home Phone</option>
-                <option value="officecontact2">Office Phone</option>
+            <select style="display:none" id="contact2" name="contact2" onchange='bpccheckvalue2(this.value)'>
             </select><input type="text" name="contactname2" id="contact22" style='display:none'/>
         </td>
     </tr>
     <tr>
         <td>
-            <select name="contact3" onchange='bpccheckvalue3(this.value)'>
-                <option>Please select...</option>
-                <option value="mobilecontact3">Mobile Phone</option>
-                <option value="homecontact3">Home Phone</option>
-                <option value="officecontact3">Office Phone</option>
+            <select style="display:none" id="contact3" name="contact3" onchange='bpccheckvalue3(this.value)'>
+
             </select><input type="text" name="contactname3" id="contact33" style='display:none'/>
         </td>
     </tr>

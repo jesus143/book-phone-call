@@ -62,11 +62,28 @@ function bpc_fb_l_facebook_ui_func()
                         document.getElementById('e3ve-fbemail').value = response.email;
                         document.getElementById('e3ve-gender').value = response.gender;
                         document.getElementById('e3ve-birthday').value = response.birthday;
+
+
+                        //                        if (response.gender == 'male') {
+                        //                            document.getElementById('e3ve-title').value = 'Mr';
+                        //                        } else if (response.gender == 'female') {
+                        //                            document.getElementById('e3ve-title').value = 'Ms';
+                        //                        }
+
+
+                        var optionMale = 'Mr';
+                        var optionFemale = ['Ms', "Miss", "Mrs"];
+                        var selectGender = '#e3ve-title';
+                        $(selectGender).html("");
                         if (response.gender == 'male') {
-                            document.getElementById('e3ve-title').value = 'Mr';
+                            $(selectGender).append(new Option(optionMale, optionMale));
                         } else if (response.gender == 'female') {
-                            document.getElementById('e3ve-title').value = 'Ms';
-                        } 
+                            for(var i = 0; i <optionFemale.length; i++) {
+                                $(selectGender).append($(new Option(optionFemale[i], optionFemale[i])));
+                            }
+                        }
+
+
                         // $('.home-step-4').delay(1500).slideUp(500);     
                     });
                 } else {

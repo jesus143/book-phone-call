@@ -1,4 +1,12 @@
 //Calendar
+
+ $directorList = '';
+
+
+
+
+
+
   $( function() {
     $( "#datepicker" ).datepicker({ minDate: 0, firstDay: 1 });
   });
@@ -70,6 +78,8 @@
     // }
 
 //Call Me On
+
+ /*
   function bpccheckvalue1(val)
   {
       if(val==="mobilecontact1")
@@ -98,9 +108,21 @@
         document.getElementById('contact33').style.display='inline'; 
   }
 
+*/
+
   
 
 $(document).ready(function(){
+
+
+
+  $
+
+
+
+
+
+
 
   $( "#company" ).keyup(function(e) {
     var query = $(this).val(); 
@@ -109,10 +131,17 @@ $(document).ready(function(){
       minLength: 2,
       open: function(event, ui) {
       //$("ul.ui-autocomplete.ui-menu .ui-menu-item:odd").css("background-color","#dedede");
-        var url = "<li id='nocompany'> Can't Find Your Company? <span id='gotoOrganisation' onclick=gotoOrganisationFunction() style='text-decoration: underline; color: #0000FF; cursor: pointer;'>click here ></a></li>"; 
+        var url = "<li id='nocompany'> Can't Find Your Company? <span id='gotoOrganisation' onclick=gotoOrganisationFunction() style='text-decoration:underline; color: #0000FF; cursor: pointer;'>click here ></a></li>";
         $("ul.ui-autocomplete.ui-menu").append(url);
       },
       select: function (event, ui) {
+
+        // hide the Are you a Director of this Company?
+        $("#director_column_q, #name_container, #director_name_container").css('display', 'none');
+
+
+
+
         var company_number = (JSON.stringify(ui.item.company_number));
         var address_snippet = (JSON.stringify(ui.item.address_snippet));
         document.getElementById('company_number').value = company_number.replace(/\"/g, "");   
@@ -127,8 +156,15 @@ $(document).ready(function(){
         $.get('cha/companyofficers.php?term=' + company_number_for_officer, function(data){
           data = JSON.parse(data);
           // console.log(data);
+
+            // This will transfer the director information to a global variable
+            // This is set because we need it to set selected director in step 4
+            $directorList = data;
+
+
             for (var i = 0; i < data.length; i++) {
             var  t =  data[i]['namesss'];
+
             var n = t.indexOf("'");
               function ucFirst(string) {
                   return string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase();
@@ -169,6 +205,9 @@ $(document).ready(function(){
 
 
   $("input[name='enquiry']").click(function(){
+
+
+
     if($("#consumer").is(":checked")){ 
       document.getElementById('organisationname_column').style.display='none';
       document.getElementById('director_column').style.display='none'; 
@@ -204,7 +243,10 @@ $(document).ready(function(){
           // if($("#verifycompany").is(":checked")){ 
           //   document.getElementById('director_column_q').style.display='block';
           // }
-          if($("#director_yes").is(":checked")){ 
+          if($("#director_yes").is(":checked")){
+
+
+
             document.getElementById('director_name_container').style.display='block'; 
           }
     }
@@ -232,11 +274,16 @@ $(document).ready(function(){
   });
 
   $("input[name='director']").click(function(){
-    if($("#director_yes").is(":checked")){ 
+    if($("#director_yes").is(":checked")){
+
+      // hide the tick yes/no,, image and the question "Are you a Director of this Company?"
+      $("#director_column_q").css('display', 'none');
+      $("#director_name_container").css('margin-top', '42px');
+
       document.getElementById('director_name_container').style.display='block'; 
       document.getElementById('name_container').style.display='block';
       document.getElementById('company_officers_name').style.display='block';
-    document.getElementById('name_not_listed').setAttribute("style", "display: block; text-decoration: underline; cursor: pointer; border-top: 1px #7a7a7a solid; padding-top: 5px;");
+      document.getElementById('name_not_listed').setAttribute("style", "display: block; text-decoration: underline; cursor: pointer; border-top: 1px #7a7a7a solid; padding-top: 5px;");
     } else {
       document.getElementById('director_name_container').style.display='none'; 
       document.getElementById('name_container').style.display='none';
@@ -262,9 +309,15 @@ $(document).ready(function(){
 
 
 function myFunction(id)
-{ 
-  var dname = $("#company_officers_name_text_"+id).val(); 
+{
+  var fname = '';
+  var lname = '';
+
+
+  var dname = $("#company_officers_name_text_"+id).val();
+
   $('#director_name').val(dname);
+
   // console.log($("#company_officers_name_text_"+id).val() );
   setTimeout(function(){
     if ( $("#callbackdate").val().length > 0 ) {
@@ -276,6 +329,24 @@ function myFunction(id)
       jQuery('.home-step-4').delay(500).slideUp(500);
     }
   }, 500);
+
+
+  // get lastname
+  directorSelectedFullName = $directorList[id]['namesss'];
+  lname =  directorSelectedFullName.split(',')[0];
+  lname = lname.substring(0, 1).toUpperCase() + lname.substring(1).toLowerCase();
+
+  // get first name
+  fname =  directorSelectedFullName.split(' ')[1];
+  if(fname.split(' ') > 1) {
+    fname = fname.split(' ')[0];
+  }
+
+  // add value to step 4 first name and lastname
+  $("#e3ve-last-name").val(lname);
+  $("#e3ve-first-name").val(fname);
+
+
 }
 
 

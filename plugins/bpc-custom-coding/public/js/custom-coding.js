@@ -1,60 +1,77 @@
-
-
-// init data and array
-$dropdowns = ['Please Select...', 'Mobile Phone', 'Home Phone', 'Office Phone'];
-$selectedOption = [];
-
 // show 2,3 dropdown when 1 dropdown contact field added with contactact number
 function bpc_contact_ino_dd_field_1(value)
 {
     $('#bpc_backup_number_text').css('display', 'block');
-    $("#contact2").css('display', 'block');
-    $("#contact3").css('display', 'block');
-}
-
-/**
- * clear select option
- * @param id
- */
+    $("#contact2").css('display', 'inline');
+    $("#contact3").css('display', 'inline');
+} 
+$dropdowns = ['Please Select...', 'Mobile Phone', 'Home Phone', 'Office Phone'];
+$selectedOption = [];
+ 
 function bpc_clear_dropdown_options(id)
 {
     $(id).html("");
 }
 
-/**
- * add select options
- * @param id
- * @param options
- * @param val
- */
 function bpc_add_dropdown_options(id, options, val) {
+
+
     for(var i = 0; i < options.length; i++ ) {
+
         var isAddOption = true;
         for(j=0; j< val.length; j++) {
             if(val[j] == options[i])  {
                 isAddOption = false;
             }
         }
+
         if(isAddOption) {
             $(id).append($(new Option(options[i], options[i])));
         }
+
+
     }
 }
-
-/**
- * make the field display and in line position
- * @param id
- */
 function bpc_display_inline(id) {
     document.getElementById(id).style.display='inline';
+
+}
+function bpc_set_empty_input(id)
+{
+    $(id).val("");
 }
 
-/**
- * Change first dropdown for contact
- * @param val
- */
+function bpc_hide_dropdown(id) {
+    $(id).css('display', 'none');
+}
+
+//Call Me On
 function bpccheckvalue1(val)
 {
+    // clear global selected option
+    $selectedOption = [];
+
+    if(val == 'Please Select...') {
+
+        // hide other open dropdown and fields
+        bpc_hide_dropdown('#contact22, #contact3,#contact33, #contact11, #bpc_backup_number_text, #contact2, #contact3');
+
+        // empty the field open
+        bpc_set_empty_input('#contact11');
+
+    } else  {
+
+        // hide other open dropdown and fields
+        bpc_hide_dropdown('#contact22, #contact3,#contact33, #bpc_backup_number_text, #contact2, #contact3');
+
+        // empty the field open
+        bpc_set_empty_input('#contact11');
+
+        // display field number
+        bpc_display_inline('contact11');
+    }
+
+
     // store value to array
     $selectedOption[0] = val;
 
@@ -64,21 +81,44 @@ function bpccheckvalue1(val)
     // add option dropdown in 2 and 3  ;
     bpc_add_dropdown_options("#contact2, #contact3", $dropdowns, $selectedOption);
 
-    // display field number
-    bpc_display_inline('contact11');
+
 }
 
-/**
- * select second dropdown for contact
- * @param val
- */
+
 function bpccheckvalue2(val)
 {
-    // store value to array
-    $selectedOption[1] = val;
 
-    // display
-    bpc_display_inline('contact22');
+
+    if(val == 'Please Select...') {
+
+        // hide other open dropdown and fields
+        bpc_hide_dropdown('#contact22, #contact33');
+
+        // empty the field open
+        bpc_set_empty_input('#contact22, #contact33');
+
+        $selectedOption[1] = '';
+
+    } else  {
+
+        // empty the field open
+        bpc_set_empty_input('#contact22');
+
+        // display field number
+        bpc_display_inline('contact22');
+
+
+        // store value to array
+        $selectedOption[1] = val;
+    }
+
+
+
+
+
+
+
+
 
     // restore selected option in 2,3
     bpc_clear_dropdown_options("#contact3");
@@ -87,13 +127,29 @@ function bpccheckvalue2(val)
     bpc_add_dropdown_options("#contact3", $dropdowns, $selectedOption);
 
 }
-
-/**
- * select 3rd dropdown for contact
- * @param val
- */
 function bpccheckvalue3(val)
 {
+
+    if(val == 'Please Select...') {
+
+
+        // hide other open dropdown and fields
+        bpc_hide_dropdown('#contact33');
+
+        // empty the field open
+        bpc_set_empty_input('#contact33');
+
+
+    } else  {
+
+        // display field number
+        bpc_display_inline('contact33');
+
+
+    }
+
+
+
     // display
-    bpc_display_inline('contact33');
+
 }

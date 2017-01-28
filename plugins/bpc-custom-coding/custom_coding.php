@@ -7,16 +7,19 @@
  * Author: Jesus Erwin Suarez
  * Author URI:
  * License:
+ */ 
+
+define('bpc_cc_plugin_url', get_site_url() . '/wp-content/plugins/bpc-custom-coding/'); 
+
+
+
+/**
+ * Proper way to enqueue scripts and styles.
  */
-
-define('bpc_cc_plugin_url', get_site_url() . '/wp-content/plugins/bpc-fb-login');
- ?>
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="application/javascript" src="public/js/custom-coding.js" ></script>
-<link rel="stylesheet" type="text/css" href="public/css/custom-coding.css"  >
-
-
-
-
-
+function wpdocs_theme_name_scripts() {
+	$customJsPath = bpc_cc_plugin_url. '/public/js/custom-coding.js';
+	$customStylePath = bpc_cc_plugin_url . '/public/css/custom-coding.css'; 
+    wp_enqueue_style( 'custom-coding-style', $customStylePath );
+    wp_enqueue_script( 'custom-coding-js',  $customJsPath , array(), '1.0.0', true );
+} 
+add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' ); 

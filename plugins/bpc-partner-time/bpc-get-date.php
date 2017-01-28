@@ -46,6 +46,10 @@ $datenow = $_GET['datenow'];
           <div class="home-time-content">
             <div class="e3ve-home-time">            
 
+
+
+
+
         <?php
         
 		$begin = new DateTime($open_from);
@@ -63,7 +67,10 @@ $datenow = $_GET['datenow'];
 		// echo 'Total of Call Back Delay Time: '.$callbackdelayandupdatedtimetotal.'<br>';	
 		// echo 'Current Time: '.$currenttime.'<br>';	
 		$container = 0;
-		foreach ($times as $time) {	
+  
+		foreach ($times as $time) {
+
+
 			if(($time->format('H:i') >= $currenttime) and ($time->format('H:i') <= '12:59') and ($date == $currentdate))
 			{
 				if( ($updateddate == $currentdate) and ($time->format('H:i') >= $updatedtime) and ($time->format('H:i') <= $callbackdelayandupdatedtimetotal) )
@@ -72,12 +79,12 @@ $datenow = $_GET['datenow'];
 				} else {		
 					$container = 1; 		
 				?>
-				<li><input name="time" value="<?php echo $time->format('H:i A');?>" type="radio" id="e3ve-time" class="e3ve-cl-time" onclick=timeFunction()><span class="e3ve-cl-time"><?php echo $time->format('H:i A'); ?></span></li>
+				<li><input name="time" value="<?php echo $time->format('H:i A');?>" type="radio" id="e3ve-time" class="e3ve-cl-time" onclick=timeFunction()><span class="e3ve-cl-times"><?php echo $time->format('H:i A'); ?></span></li>
 				<?php
 				}
 			} else if(($time->format('H:i') <= '12:59') and ($date <> $currentdate)) {
 				?>
-				<li><input name="time" value="<?php echo $time->format('H:i A');?>" type="radio" id="e3ve-time" class="e3ve-cl-time" onclick=timeFunction()><span class="e3ve-cl-time"><?php echo $time->format('H:i A'); ?></span></li>
+				<li><input name="time" value="<?php echo $time->format('H:i A');?>" type="radio" id="left-time" class="e3ve-cl-time" onclick=timeFunction()><span class="e3ve-cl-times"><?php echo $time->format('H:i A'); ?></span></li>
 				<?php
 			}
 		    // echo $time->format('H:i'), '-', 
@@ -87,7 +94,7 @@ $datenow = $_GET['datenow'];
 		</ul>
 		<ul class="right-time">
 		<?php
-		foreach ($times as $time) {			
+		foreach ($times as $time) {
 			if(($time->format('H:i') >= $currenttime) and ($time->format('H:i') > '12:59') and ($date == $currentdate)){
 				if( ($updateddate == $currentdate) and ($time->format('H:i') >= $updatedtime) and ($time->format('H:i') <= $callbackdelayandupdatedtimetotal) )
 				{
@@ -95,12 +102,12 @@ $datenow = $_GET['datenow'];
 				} else {
 					$container = 1;
 				?>
-				<li><input name="time" value="<?php echo $time->format('g:i A');?>" type="radio" id="e3ve-time" class="e3ve-cl-time" onclick=timeFunction()><span class="e3ve-cl-time"><?php echo $time->format('g:i A'); ?></span></li>
+				<li><input name="time" value="<?php echo $time->format('h:i A');?>" type="radio" id="e3ve-time" class="e3ve-cl-time" onclick=timeFunction()><span class="e3ve-cl-times"><?php echo $time->format('h:i A'); ?></span></li>
 				<?php
 				}
 			} else if (($time->format('H:i') > '12:59') and ($date <> $currentdate)) {
 				?>
-				<li><input name="time" value="<?php echo $time->format('g:i A');?>" type="radio" id="e3ve-time" class="e3ve-cl-time" onclick=timeFunction()><span class="e3ve-cl-time"><?php echo $time->format('g:i A'); ?></span></li>
+				<li><input name="time" value="<?php echo $time->format('h:i A');?>" type="radio" id="e3ve-time" class="e3ve-cl-time" onclick=timeFunction()><span class="e3ve-cl-times"><?php echo $time->format('h:i A'); ?></span></li>
 				<?php
 			} 
 		}
@@ -123,6 +130,9 @@ $datenow = $_GET['datenow'];
 					jQuery('.home-step-4').delay(500).slideUp(500);
  				}	
 			}
+			// $('.e3ve-cl-times').click(function() {
+			//     $(this).css('background', 'url(http://bookphonecall.com/wp-content/uploads/2017/01/time-button-with-tick.png)');
+			// });
         </script>
         <?php
 
