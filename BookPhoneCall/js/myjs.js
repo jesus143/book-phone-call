@@ -1,14 +1,12 @@
 //Calendar
 
  $directorList = '';
-
-
-
-
-
+$("#home-arrow-1").css('display', 'block');
 
   $( function() {
-    $( "#datepicker" ).datepicker({ minDate: 0, firstDay: 1 });
+    $( "#datepicker" ).datepicker({ minDate: 0, firstDay: 1});
+    $('#datepicker a.ui-state-active').removeClass('ui-state-active');
+    $('#datepicker a.ui-state-hover').removeClass('ui-state-hover');
   });
 
   $(document).on("change", "#datepicker", function () {
@@ -113,15 +111,6 @@
   
 
 $(document).ready(function(){
-
-
-
-  $
-
-
-
-
-
 
 
   $( "#company" ).keyup(function(e) {
@@ -313,9 +302,7 @@ function myFunction(id)
   var fname = '';
   var lname = '';
 
-
   var dname = $("#company_officers_name_text_"+id).val();
-
   $('#director_name').val(dname);
 
   // console.log($("#company_officers_name_text_"+id).val() );

@@ -18,6 +18,7 @@
                 //the_title();
                 echo $company_name; 
               ?>
+		<input type="hidden" name="company_name" id="company_name" value="<?php echo $company_name; ?>">
             </h2>
           </div>
           <div class="home-table-business-info">
@@ -44,7 +45,7 @@
         <div id="datepicker"></div>
         <p style="display: none;">Date Choosen: <input type="text" name="callbackdate" id="callbackdate"></p>
       </div>
-      <div id="home-arrow-1"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/home-arrow.png" alt="" width="" height=""></div>
+      <div id="home-arrow-1"><img src="http://bookphonecall.com/wp-content/uploads/2017/01/to-left-arrow.png" alt="" width="" height=""></div>
       <div id="home-time">
 
 	<?php  echo do_shortcode('[BPC_Partner_Time_Schedule]'); ?>
@@ -52,7 +53,7 @@
 	<?php echo get_option('of_step1right') ?>
 
 	</div>
-      <!--<div class="proceed-btn-1">Confirm Time & Date</div>-->
+      <!-- <div class="proceed-btn-1">Confirm Time & Date</div>-->
     </div>
     <div id="home-content-inner" class="home-step-2">
       <div class="prev-steps-wrapper">
@@ -62,7 +63,7 @@
         <h2><?php echo get_option('of_step2heading') ?></h2>
       </div>
       <div class="home-step-3-content-container"> <?php echo get_option('of_step3content') ?>
-        <!--<div class="proceed-btn-3">Confirm Enquiry Type</div>-->
+        <div class="proceed-btn-3" id="confirm_step2" style="display: none;">Confirm Enquiry Type > </div>
       </div>
     </div>
     <div id="home-content-inner" class="home-step-3">

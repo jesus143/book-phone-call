@@ -96,6 +96,9 @@ function autoResizeDiv()
         window.onresize = autoResizeDiv;
         autoResizeDiv();
 
+  var $comp_name = document.getElementById('company_name').value;
+  document.title = $comp_name + ' | BookPhoneCall.com';
+
 </script>
 <div id="footer">
   <div id="inner-wrapper"><?php echo get_option('of_footer-text') ?></div>

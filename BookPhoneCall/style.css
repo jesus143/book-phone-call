@@ -514,6 +514,7 @@ body {
 	padding:0;
 	overflow:hidden;;
 }
+
 #home-content #inner-wrapper {
     padding: 20px 20px 70px;
 }
@@ -535,7 +536,7 @@ body {
     vertical-align: middle;
 }
 .header-right {
-	background-color: #666666;
+	background-color: transparent;
     color: #ffffff;
     display: inline-block;
     float: left;
@@ -556,7 +557,7 @@ body {
     list-style: outside none none;
     margin: 0;
     padding: 0;
-    width: 70%;
+    width: 65%;
 }
 .header-right-bullets ul li {
 	background: transparent url(http://bookphonecall.com/wp-content/uploads/2016/12/tick-1.png) no-repeat scroll left center;
@@ -566,16 +567,16 @@ body {
 	bottom: 0;
     float: left;
     position: absolute;
-    text-align: right;
+    right: 11px;
+    text-align: left;
     width: 30%;
-	right:0;
 }
 .header-right-btn a {
-	color:#fff !important;
-	font-weight:bold;
+	color: #06e !important;
+    font-weight: bold;
 }
 .header-right-btn a:hover {
-	color:#464646 !important;
+	color:#ffffff !important;
 }
 #home-intro {
 	clear: both;
@@ -622,27 +623,113 @@ body {
 	src:url(fonts/Oswald-Light.ttf);
 }
 #header {
-	background:#666666;
-	border-bottom: 5px solid #464646;
+	background: transparent url(http://bookphonecall.com/wp-content/uploads/2017/01/Book-Phone-Call-header-image.png) repeat scroll 0 0;
+    border-bottom: 5px solid #464646;
 }
 #home-content {
 	background: #ffffff none repeat scroll 0 0;
 }
 #footer {
 	background: #181818 none repeat scroll 0 0;
-    bottom: -5px;
+    bottom: 0;
     left: 0;
-    position: fixed;
+    padding: 0;
+    position: relative;
     right: 0;
+    width: 1064px;
+}
+#e3ve-footer-inner {
+	width: 1064px;
+	padding:
+}
+.footer-nav {
+	border-bottom: 1px solid;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0;
+}
+.fbg {
+	background: transparent url(http://bookphonecall.com/wp-content/uploads/2017/01/footer-bg.png) no-repeat scroll 0 0;
+    padding: 10px;
+}
+.footer-nav ul {
+	display: block;
+    float: left;
+    font-size: 11px;
+    list-style: outside none none;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 80%;
+}
+.footer-nav ul li {
+	display: table-cell;
+	position:relative;
+	width: 146px;
+}
+.footer-nav ul li a {
+	color: #8c8c8c;
+    text-decoration: none;
+	transition:all 0.3s;
+}
+.footer-nav ul li a:hover {
+	color: #f5f5f5;
+}
+.footer-nav ul li a + .hover-arrow {
+	border-bottom: 5px solid #f5f5f5;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom: -20px;
+    height: 0;
+    left: 50%;
+    margin: 0 auto 0 -5px;
+    position: absolute;
+    width: 0;
+	opacity:0;
+	transition: all 0.1s;
+}
+.footer-nav ul li a:hover + .hover-arrow {
+	bottom: -10px;
+	opacity:1;
+}
+.footer-app-img {
+	margin: 0 auto 10px;
+    overflow: hidden;
+    width: 314px;
+}
+.apple-app-icon {
+	float: left;
+    width: 166px;
+}
+.apple-app-icon a {
+	display:block;
+}
+.android-app-icon {
+	float: left;
+    margin-left: 5px;
+    width: 143px;
+}
+.android-app-icon a {
+	display:block;
+}
+.footer-info {
+	text-align: center;
+}
+.footer-info p {
+	color: #f5f5f5;
+    font-size: 11px;
+    margin: 0;
+    text-shadow: 0 1px 1px #000;
 }
 #header-banner {
-	background: #181818 none repeat scroll 0 0;
-	padding: 10px 0;
-	display: flex;
+	background: transparent none repeat scroll 0 0;
+    display: flex;
+    padding: 10px 0;
     text-align: center;
 }
 .hb-1 {
-	display: block;
+	display: none;
     float: left;
     margin: 0 0 0 2%;
     width: 14%;
@@ -651,7 +738,7 @@ body {
 	font-size: 12px;
 }
 .hb-2 {
-	display: block;
+	display: none;
     float: left;
     margin: 0 0 0 2%;
     padding: 25px 0;
@@ -671,7 +758,7 @@ body {
     text-transform: uppercase;
 }
 .hb-3 {
-	display: block;
+	display: none;
     float: left;
     margin: 0 2%;
     width: 20%;
@@ -2651,7 +2738,7 @@ body {
 }
 .home-time-box {
 	background: #8c8c8c none repeat scroll 0 0;
-    height: 396px;
+    height: auto;
     width: 100%;
 }
 .home-time-box-heading {
@@ -3248,10 +3335,19 @@ li.ui-menu-divider.ui-widget-content {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 10px;
 }
-.e3ve-cl-time{
-color: #fff;
-font-weight: bold;
-font-size: 24px;
+.e3ve-cl-times{
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+    background: url(http://bookphonecall.com/wp-content/uploads/2017/01/time-start.png) no-repeat;
+    padding: 10px 30px 10px 35px;
+    width: 185px;
+    height: 35px;
+    display: inherit;
+}
+.e3ve-home-time .left-time li input:hover + span,
+.e3ve-home-time .right-time li input:hover + span  {
+	    background: url(http://bookphonecall.com/wp-content/uploads/2017/01/time-hover.png) no-repeat;
 }
 #directordiv, #director_column {
 	width: 90%;
@@ -3259,10 +3355,143 @@ font-size: 24px;
 div#address_snippet, div#name_container {
     margin-left: 40px;
 }
-
+.ui-datepicker-unselectable .ui-state-default {
+    background: #ffe6e6 !important;
+    color: #b4b3b3;
+}
 
 
 
 /*Custom css*/ 
 
+/********************Sicial Media*********************/
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+body {
+    font-family: 'Lato', sans-serif;
+    color: #FFF;
+    background: #322f30;
+    -webkit-font-smoothing: antialiased;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+p > a:hover{
+    color: #d9d9d9;
+    text-decoration:  underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin:  1% 0 1% 0;
+}
+._12 {
+    font-size: 1.2em;
+}
+._14 {
+    font-size: 1.4em;
+}
+ul {
+    padding:0;
+    list-style: none;
+}
+.footer-social-icons {
+    display: block;
+    float: left;
+    margin: 0 auto;
+    width: 20%;
+}
+.social-icon {
+    color: #fff;
+}
+ul.social-icons {
+    padding: 0;
+    width: 100%;
+}
+.social-icons li {
+    display: inline;
+    vertical-align: top;
+    width: 0 !important;
+}
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+}
+.fa-facebook {
+    padding:11px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-facebook:hover {
+    background-color: #3d5b99;
+}
+.fa-twitter {
+    padding:11px 12px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-twitter:hover {
+    background-color: #00aced;
+}
+.fa-rss {
+    padding:11px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-rss:hover {
+    background-color: #eb8231;
+}
+.fa-youtube {
+    padding:11px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-youtube:hover {
+    background-color: #e64a41;
+}
+.fa-linkedin {
+    padding:11px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-linkedin:hover {
+    background-color: #0073a4;
+}
+.fa-google-plus {
+    padding:11px 9px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #322f30;
+}
+.fa-google-plus:hover {
+    background-color: #e25714;
+}
+/********************Sicial Media*********************/
 

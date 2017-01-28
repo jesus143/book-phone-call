@@ -8,10 +8,12 @@
 */
 
 define( 'PLUGIN_DIR', dirname(__FILE__).'/' );  
+define( 'PLUGIN_URL', get_site_url().'/wp-content/plugins/bpc-partner-time/');
 add_shortcode("BPC_Partner_Time_Schedule", "bpc_partner_time_func");
 
 function bpc_partner_time_func() {
 	?>
+		<script src="<?php print PLUGIN_URL;?>public/js/bpc_partner_time.js" > </script>
 	<h3>Choose Time</h3>
 	<div id="bpc-select-date-response">
         <div class="home-time-box">

@@ -37,7 +37,6 @@ set_post_thumbnail_size(120);
     // $rows = $mydb->get_results("SELECT * FROM wp_user_profiles_mirror");
 
     foreach ($rows as $obj) :
-    $partner_id = $obj->partner_id;
     $company_name = $obj->company_name;
     $company_description = $obj->company_description;
     $full_name = $obj->full_name;
@@ -121,6 +120,8 @@ bpcinsertcustomer( $title, $firstname, $lastname, $email, $fbemail, $dateofbirth
 bpcinsertcbooking( $callbackdate, $callbacktime, $partner_id, $enquirytype, $enquiry, $company, $status, $bpccustomerid );
     echo '<script>alert("Booking Completed!!!");</script>';
 }
+
+
 
 
 ?>
