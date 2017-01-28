@@ -3191,12 +3191,13 @@ body {
 .proceed-btn-2 {
 	clear: both;
     cursor: pointer;
-    float: right;
+    float: left;
     font-size: 12px;
     margin: 20px auto;
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
-    width: 89%;
+    /*width: 89%;*/
+    width: auto;
 }
 .proceed-btn-3 {
 	background: #666666 none repeat scroll 0 0;
