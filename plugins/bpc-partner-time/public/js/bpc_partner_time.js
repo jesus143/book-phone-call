@@ -4,3 +4,12 @@ function pbc_home_time_show(idNum) {
     }
     $("#bpc-home-time-box-display-"+idNum).css('display','block');
 }
+function bpc_tick_time_set_bg(id){
+
+    $('#e3ve-cl-times-'+id).css("background-image", "url(http://bookphonecall.com/wp-content/uploads/2017/01/time-clicked.png)");
+
+    setTimeout(function(){
+        $('#e3ve-cl-times-'+id).css("background-image", "url(http://bookphonecall.com/wp-content/uploads/2017/01/time-start.png)");
+
+    }, 2000);
+}

@@ -53,7 +53,7 @@ $datenow = $_GET['datenow'];
 		// echo 'Total of Call Back Delay Time: '.$callbackdelayandupdatedtimetotal.'<br>';
 		// echo 'Current Time: '.$currenttime.'<br>';
 		$container = 0;
-
+		$counter=0;
 		foreach ($times as $time) {
 			if(($time->format('H:i') >= $currenttime) and ($time->format('H:i') <= '12:59') and ($date == $currentdate))
 			{
@@ -61,14 +61,16 @@ $datenow = $_GET['datenow'];
 				{
 					//echo 'In between the Call Back Delay';
 				} else {
+						$counter++; 
 					$container = 1;
 					$timeA = $time->format('h:i A');
-					$timeField[] = "<li><input name='time' value='$timeA' type='radio' id='e3ve-time' class='e3ve-cl-time' onclick='timeFunction()' ><span class='e3ve-cl-times'>$timeA</span></li>";
+					$timeField[] = "<li><input name='time' value='$timeA' type='radio' id='e3ve-time' class='e3ve-cl-time' onclick='timeFunction(); bpc_tick_time_set_bg(\"$counter\")'  ><span class='e3ve-cl-times' id='e3ve-cl-times-$counter'>$timeA</span></li>";
 
 				}
 			} else if(($time->format('H:i') <= '12:59') and ($date <> $currentdate)) {
 				$timeA = $time->format('h:i A');
-				$timeField[] = "<li><input name='time' value='$timeA' type='radio' id='e3ve-time' class='e3ve-cl-time' onclick='timeFunction()' ><span class='e3ve-cl-times'>$timeA</span></li>";
+				$counter++; 
+				$timeField[] = "<li><input name='time' value='$timeA' type='radio' id='e3ve-time' class='e3ve-cl-time' onclick='timeFunction(); bpc_tick_time_set_bg(\"$counter\")' ><span class='e3ve-cl-times' id='e3ve-cl-times-$counter'>$timeA</span></li>";
 
 			}
 		    // echo $time->format('H:i'), '-',
@@ -105,7 +107,7 @@ $datenow = $_GET['datenow'];
 
         function bpc_print_no_time_display()
         {
-        ?>
+        ?> 
         	<div class="home-time-box">
 			  <div class="home-time-box-heading">
 				<div class="home-time-box-heading-left">
