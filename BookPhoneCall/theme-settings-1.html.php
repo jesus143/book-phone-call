@@ -37,9 +37,9 @@
                         <td style="width: 50%;">
                             <div class="home-step-3-form-wrapper" id="directordiv">
                                 <div style="display:none;" id="director_column_q">
-                                    <!-- <div class="home-step-3-form-img" style="margin:0 auto 20px;">
+                                    <div class="home-step-3-form-img" style="margin:0 auto 20px;">
                                       <img src="http://bookphonecall.com/wp-content/uploads/2016/12/ltd-company.png" style="display:block; margin:0 auto;" width="100" height="100">
-                                    </div> -->
+                                    </div>
                                     <div class="home-step-3-form-label"><p>Are you a Director of this Company?</p></div>
                                     <p style="clear: both;">
                                         <input id="director_yes" name="director" value="Yes" type="radio">Yes
