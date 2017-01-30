@@ -101,7 +101,42 @@ function autoResizeDiv()
 
 </script>
 <div id="footer">
-  <div id="inner-wrapper"><?php echo get_option('of_footer-text') ?></div>
+  <div id="inner-wrapper e3ve-footer-inner">
+    <div class="footer-nav">
+      <ul>
+        <li><a href="#">Home</a><div class="hover-arrow"></div></li>
+        <li><a href="#">About Us</a><div class="hover-arrow"></div></li>
+        <li><a href="#">Contact Us</a><div class="hover-arrow"></div></li>
+        <li><a href="#">Terms &amp; Privacy</a><div class="hover-arrow"></div></li>
+        <li><a href="#">Cookie Policy</a><div class="hover-arrow"></div></li>
+        <li><a href="#">Register</a><div class="hover-arrow"></div></li>
+        <li><a href="#">Login</a><div class="hover-arrow"></div></li>
+      </ul>
+      <div class="footer-social-icons">
+        <ul class="social-icons">
+            <li><a href="" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+            <li><a href="" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
+            <li><a href="" class="social-icon"> <i class="fa fa-rss"></i></a></li>
+            <li><a href="" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
+            <li><a href="" class="social-icon"> <i class="fa fa-linkedin"></i></a></li>
+            <li><a href="" class="social-icon"> <i class="fa fa-google-plus"></i></a></li>
+        </ul>
+    </div>
+    </div>
+    <div class="fbg">
+    <div class="footer-app-img">
+      <div class="apple-app-icon"><a href=""><img src="http://bookphonecall.com/wp-content/uploads/2017/01/appleapp.png" width="166" height="50"></a></div>
+      <div class="android-app-icon"><a href=""><img src="http://bookphonecall.com/wp-content/uploads/2017/01/Android-app-store.png" width="143" height="50"></a></div>
+    </div>
+    <div class="footer-info">
+      <p>© 2017 All Rights Reserved, BookPhoneCall.com, Suite 11, Zeal House, 8 Deer Park Road, London, SW19 3UU. ICO Registration Number: ZA167803, Tel: 0203 0120 251 Fax: 0203 0120 254 Email: support@bookphonecall.com</p>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer">
+  <!-- <div id="inner-wrapper"><?php echo get_option('of_footer-text') ?></div> -->
 </div>
 </div>
 <?php wp_footer(); ?>

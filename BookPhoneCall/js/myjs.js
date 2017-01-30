@@ -1,7 +1,6 @@
 //Calendar
 
  $directorList = '';
-$("#home-arrow-1").css('display', 'block');
 
   $( function() {
     $( "#datepicker" ).datepicker({ minDate: 0, firstDay: 1});
@@ -12,6 +11,7 @@ $("#home-arrow-1").css('display', 'block');
   $(document).on("change", "#datepicker", function () {
       $datenow = $.datepicker.formatDate("dd/mm/yy", $(this).datepicker("getDate"));
       document.getElementById('callbackdate').value = $datenow;
+      document.getElementById('home-arrow-1').innerHTML = '<img src="http://bookphonecall.com/wp-content/themes/BookPhoneCall/images/home-arrow.png" alt="" width="" height="">';
       $.get( "/wp-content/plugins/bpc-partner-time/bpc-get-date.php?datenow="+$datenow, function( data ) {
       $( "#bpc-select-date-response" ).html(data);
     });
@@ -111,8 +111,7 @@ $("#home-arrow-1").css('display', 'block');
   
 
 $(document).ready(function(){
-
-
+document.getElementById('company_name_step3').innerHTML = document.getElementById('company_name').value; 
   $( "#company" ).keyup(function(e) {
     var query = $(this).val(); 
     $( "#company" ).autocomplete({
@@ -205,6 +204,8 @@ $(document).ready(function(){
       document.getElementById('name_container').style.display='none';
       document.getElementById('company_officers_name').style.display='none';
       document.getElementById('name_not_listed').style.display='none';
+      document.getElementById('tablediv').style.display='none';  
+      document.getElementById('tablediv2').style.display='none'; 
       //emptied field
       $('#company').val('');
       $('#address_snippet').empty();
@@ -229,6 +230,8 @@ $(document).ready(function(){
     else if($("#ltdcompany").is(":checked")){
       document.getElementById('organisationname_column').style.display='none';
       document.getElementById('director_column').style.display='block';   
+      document.getElementById('tablediv').style.display='block';  
+      document.getElementById('tablediv2').style.display='block';  
           // if($("#verifycompany").is(":checked")){ 
           //   document.getElementById('director_column_q').style.display='block';
           // }
@@ -247,6 +250,8 @@ $(document).ready(function(){
       document.getElementById('name_container').style.display='none';
       document.getElementById('company_officers_name').style.display='none';
       document.getElementById('name_not_listed').style.display='none';
+      document.getElementById('tablediv').style.display='none';  
+      document.getElementById('tablediv2').style.display='none';
       //emptied field
       $('#company').val('');
       $('#address_snippet').empty();
@@ -267,12 +272,12 @@ $(document).ready(function(){
 
       // hide the tick yes/no,, image and the question "Are you a Director of this Company?"
       $("#director_column_q").css('display', 'none');
-      $("#director_name_container").css('margin-top', '42px');
+      $("#director_name_container").css('margin-top', '12px');
 
       document.getElementById('director_name_container').style.display='block'; 
       document.getElementById('name_container').style.display='block';
       document.getElementById('company_officers_name').style.display='block';
-      document.getElementById('name_not_listed').setAttribute("style", "display: block; text-decoration: underline; cursor: pointer; border-top: 1px #7a7a7a solid; padding-top: 5px;");
+      document.getElementById('name_not_listed').setAttribute("style", "display: block; cursor: pointer; border-top: 1px #7a7a7a solid; padding-top: 5px;");
     } else {
       document.getElementById('director_name_container').style.display='none'; 
       document.getElementById('name_container').style.display='none';
@@ -324,9 +329,10 @@ function myFunction(id)
   lname = lname.substring(0, 1).toUpperCase() + lname.substring(1).toLowerCase();
 
   // get first name
-  fname =  directorSelectedFullName.split(' ')[1];
-  if(fname.split(' ') > 1) {
-    fname = fname.split(' ')[0];
+  fname =  directorSelectedFullName.split(',')[1];
+  fname = fname.split(' ');
+  if(fname.length > 1) {
+     fname = fname[1];
   }
 
   // add value to step 4 first name and lastname
@@ -347,6 +353,8 @@ function gotoOrganisationFunction()
   document.getElementById('name_container').style.display='none';
   document.getElementById('company_officers_name').style.display='none';
   document.getElementById('name_not_listed').style.display='none';
+  document.getElementById('tablediv').style.display='none';  
+  document.getElementById('tablediv2').style.display='none';
   //emptied field
   $('#company').val('');
   $('#address_snippet').empty();

@@ -45,7 +45,7 @@
         <div id="datepicker"></div>
         <p style="display: none;">Date Choosen: <input type="text" name="callbackdate" id="callbackdate"></p>
       </div>
-      <div id="home-arrow-1"><img src="http://bookphonecall.com/wp-content/uploads/2017/01/to-left-arrow.png" alt="" width="" height=""></div>
+      <div id="home-arrow-1"><img src="http://bookphonecall.com/wp-content/uploads/2017/01/to-left-arrow.png" alt="" style="    width: 55%;"></div>
       <div id="home-time">
 
 	<?php  echo do_shortcode('[BPC_Partner_Time_Schedule]'); ?>
@@ -92,7 +92,7 @@
                 <!--<img src="http://www.caterkart.com/images/login-facebook.png" onclick="FB.login()" />-->
                 <div id="fb-status" style="display: none;"></div>
             </div>
-            <div class="fr-continue-btn"> <a href="<?php echo get_option('of_continuebtn') ?>" class="proceed-btn-2" id="proceed-btn-2" >Continue</a> </div>
+            <div class="fr-continue-btn"> <a href="<?php echo get_option('of_continuebtn') ?>" class="proceed-btn-2" id="proceed-btn-2" >Continue >> </a> </div>
           </div>
         </div>
         <div class="home-step-2-or">
