@@ -5,7 +5,9 @@ http://bookphonecall.com/wp-content/uploads/2017/01/favicon.png
 
 
 
-empty
+
+null
+
 
 
 
@@ -20,18 +22,14 @@ http://bookphonecall.com/wp-content/uploads/2017/01/header-title-1.png
 
 
 
+
 Header Banner 1024x100 Pixel
 
 
 
 
 
-
-
-
 uncategorized
-
-
 
 
 
@@ -52,9 +50,9 @@ uncategorized
 
 
 
+
 <h3>Choose Date</h3>
 <div class="home-calendar"> <img src="http://localhost:8080/BookPhoneCall/wp-content/themes/BookPhoneCall/images/calendar.png" alt="calendar image" width="417" height="364"> </div>
-
 
 
 
@@ -133,6 +131,8 @@ uncategorized
 
 
 
+
+
 STEP 2: Enquiry Type
 
 
@@ -141,8 +141,9 @@ STEP 2: Enquiry Type
 
 
 
+
 <h3>First Request</h3>
-<p>By requesting call back from Premier Plumbing Ltd you will also receive FREE VIP Treatment from others small to medium size businesses on the BookPhoneCall.com network including express phone support, queue jumping on Live 121 web chat from participating businesses as well as access to call back times not available to the general public and standard customers and the best part is that it’s Free, Forever! </p>
+<p>By requesting call back from <span id="company_name_step3"></span> you will also receive FREE VIP Treatment from others small to medium size businesses on the BookPhoneCall.com network including express phone support, queue jumping on Live 121 web chat from participating businesses as well as access to call back times not available to the general public and standard customers and the best part is that it’s Free, Forever! </p>
 <div class="request-tick-list">
     <div class="small-green-tick">Free SMS & Email Confirmation & Reminders</div>
     <div class="small-green-tick">Free Login to Book, Change or Cancel Call Backs</div>
@@ -156,15 +157,16 @@ STEP 2: Enquiry Type
 
 
 
-#
-
-
-
-
-
-
 
 #
+
+
+
+
+
+
+#
+
 
 
 
@@ -212,63 +214,67 @@ STEP 3: Choose Method
 <div class="home-step-3-form">
     <div class="home-step-3-form-wrapper">
         <div class="home-step-3-form-img" style="margin:0 auto 20px;"><img src="http://bookphonecall.com/wp-content/uploads/2016/12/CONSUMER.png" style="display:block; margin:0 auto;" width="100" height="100"></div>
-        <div class="home-step-3-form-input">
-            <input name="enquiry" value="consumer" type="radio" id="consumer">
-        </div>
-        <div class="home-step-3-form-label">Consumer</div>
+        <!-- <div class="home-step-3-form-input">
+          <input name="enquiry" value="consumer" type="radio" id="consumer">
+         </div>  -->
+        <div class="home-step-3-form-label" style="text-align: center;"> <input name="enquiry" value="consumer" type="radio" id="consumer"> Consumer</div>
     </div>
     <div class="home-step-3-form-wrapper">
         <div class="home-step-3-form-img" style="margin:0 auto 20px;"><img src="http://bookphonecall.com/wp-content/uploads/2017/01/business-org.png" style="display:block; margin:0 auto;" width="100" height="100"></div>
-        <div class="home-step-3-form-input">
-            <input name="enquiry" value="ltdcompany" type="radio" id="ltdcompany">
-        </div>
-        <div class="home-step-3-form-label">On Behalf of a Limited Company</div>
+        <!-- <div class="home-step-3-form-input">
+          <input name="enquiry" value="ltdcompany" type="radio" id="ltdcompany" style="margin-left: 60px;">
+        </div> -->
+        <div class="home-step-3-form-label" style="text-align: center;"> <input name="enquiry" value="ltdcompany" type="radio" id="ltdcompany"> On Behalf of a Limited Company</div>
     </div>
     <div class="home-step-3-form-wrapper">
         <div class="home-step-3-form-img" style="margin:0 auto 20px;"><img src="http://bookphonecall.com/wp-content/uploads/2016/12/business-org.png" style="display:block; margin:0 auto;" width="100" height="100"></div>
-        <div class="home-step-3-form-input">
-            <input name="enquiry" value="organisation" type="radio" id="organisation">
-        </div>
-        <div class="home-step-3-form-label">Business or Organisation (not Ltd company)</div>
+        <!-- <div class="home-step-3-form-input">
+          <input name="enquiry" value="organisation" type="radio" id="organisation" style="margin-left: 25px;">
+        </div> -->
+        <div class="home-step-3-form-label" style="text-align: center;"> <input name="enquiry" value="organisation" type="radio" id="organisation"> Business or Organisation (not Ltd company)</div>
     </div>
 </div>
 <div class="home-step-3-form">
-    <table style="width: 80%; margin: 0 auto;">
-        <tr>
-            <td style="width: 50%;">
-                <div class="home-step-3-form-wrapper" style="display:none;" id="director_column">
-                    <p>Company Name: <input id="company" name="company" value="" autocomplete="off" placeholder=">> Enter Your Ltd Company Name Here <<" style="width: 70%;" /><input type="hidden" id="company_number" name="company_number" value="" /></p>
-                    <div id="address_snippet"></div>
-                    <p id="verify_company_container" style="display: none;"><img id="verifycompany" src="http://bookphonecall.com/wp-content/uploads/2017/01/workcompany.png" style="cursor: pointer;"><!-- <input type="checkbox" id="verifycompany" name="verifycompany" value="verifycompany"> Yes. I work for this Company. --></p>
-                </div>
-            </td>
-            <td style="width: 50%;">
-                <div class="home-step-3-form-wrapper" id="directordiv">
-                    <div style="display:none;" id="director_column_q">
-                        <div class="home-step-3-form-img" style="margin:0 auto 20px;">
-                            <img class="aligncenter" src="http://bookphonecall.com/wp-content/uploads/2016/12/ltd-company.png" style="display:block; margin:0 auto;" width="100" height="100">
+    <table style="width: 100%; margin: 0 auto;"><tr><td>
+        <div id="tablediv" style="border-bottom:1px solid; width: 100%; display: none;"> </div>
+        <table style="width: 80%; margin: 0 auto;">
+            <tr>
+                <td style="width: 50%;">
+                    <div class="home-step-3-form-wrapper" style="display:none;" id="director_column">
+                        <p>Company Name: <input id="company" name="company" value="" autocomplete="off" placeholder=">> Enter Your Ltd Company Name Here <<" style="width: 70%;" /><input type="hidden" id="company_number" name="company_number" value="" /></p>
+                        <div id="address_snippet"></div>
+                        <p id="verify_company_container" style="display: none;"><img id="verifycompany" src="http://bookphonecall.com/wp-content/uploads/2017/01/workcompany.png" style="cursor: pointer;"><!-- <input type="checkbox" id="verifycompany" name="verifycompany" value="verifycompany"> Yes. I work for this Company. --></p>
+                    </div>
+                </td>
+                <td style="width: 50%;">
+                    <div class="home-step-3-form-wrapper" id="directordiv">
+                        <div style="display:none;" id="director_column_q">
+                            <div class="home-step-3-form-img" style="margin: 0 auto 16px;">
+                                <img src="http://bookphonecall.com/wp-content/uploads/2016/12/ltd-company.png" style="display:block;margin:0 auto;margin-left: 21px;margin-top: 14px;" width="100" height="100">
+                            </div>
+                            <div class="home-step-3-form-label"><p>Are you a Director of this Company?</p></div>
+                            <p style="clear: both;">
+                                <input id="director_yes" name="director" value="Yes" type="radio">Yes
+                                <input id="director_no" name="director" value="No" type="radio">No
+                            </p>
                         </div>
-                        <div class="home-step-3-form-label"><p>Are you a Director of this Company?</p></div>
-                        <p style="clear: both;">
-                            <input id="director_yes" name="director" value="Yes" type="radio">Yes
-                            <input id="director_no" name="director" value="No" type="radio">No
-                        </p>
+                        <p id="director_name_container" style="display:none;">Officers Name: <input id="director_name" name="director_name" value="" autocomplete="off" placeholder=">> Enter Your Name Here <<" style="width: 70%; text-transform: capitalize;" /></p>
+                        <div id="name_container" style="display:none;">
+                            <p id="company_officers_name" style="display:none;"></p>
+                            <p id="name_not_listed" style="display:none;"><img src="http://bookphonecall.com/wp-content/uploads/2017/01/icon-question.png">  My Name is Not Listed Here >></p>
+                        </div>
                     </div>
-                    <p id="director_name_container" style="display:none;">Officers Name: <input id="director_name" style="text-transform: capitalize;" name="director_name" value="" autocomplete="off" placeholder=">> Enter Your Name Here <<" style="width: 70%;" /></p>
-                    <div id="name_container" style="display:none;">
-                        <p id="company_officers_name" style="display:none;"></p>
-                        <p id="name_not_listed" style="display:none;"><img src="http://bookphonecall.com/wp-content/uploads/2017/01/icon-question.png">My Name is Not Listed Here >></p>
-                    </div>
-                </div>
-            </td>
-        </tr>
-    </table>
-    <div class="home-step-3-form" style="display:none;" id="organisationname_column">
-        <div class="home-step-3-form-wrapper" style="float: right;">
-            <p>Organisation Name: <br><input id="organisationname" name="organisationname" value="" placeholder=">> Enter Your Organisation Name Here <<" style="width: 70%;" /></p>
-        </div>
+                </td>
+            </tr>
+        </table>
+        <div id="tablediv2" style="border-bottom:1px solid; width: 100%; display: none;"> </div>
+    </td></tr></table>
+</div>
+<div class="home-step-3-form" style="display:none;  margin: 10px auto !important" id="organisationname_column">
+    <div class="home-step-3-form-wrapper" style="float: right; width: 40%;">Organisation Name: <input id="organisationname" name="organisationname" value="" placeholder=">> Enter Your Organisation Name Here <<" style="width: 60%;" />
     </div>
 </div>
+
 
 
 
@@ -277,6 +283,7 @@ STEP 3: Choose Method
 
 
 STEP 4: Confirm Appointment
+
 
 
 
@@ -304,10 +311,10 @@ STEP 4: Confirm Appointment
             </select>
         </td>
         <td>
-            <input name="firstname" type="text" id="e3ve-first-name">
+            <input name="firstname" type="text" id="e3ve-first-name" style="text-transform: capitalize;">
         </td>
         <td>
-            <input name="lastname" type="text" id="e3ve-last-name">
+            <input name="lastname" type="text" id="e3ve-last-name" style="text-transform: capitalize;">
         </td>
     </tr>
     </tbody>
@@ -344,24 +351,27 @@ STEP 4: Confirm Appointment
                 <option value="Home Phone">Home Phone</option>
                 <option value="Office Phone">Office Phone</option>
             </select><input type="text" name="contactname1" id="contact11" style='display:none' onkeyup="bpc_contact_ino_dd_field_1(this.value)" />
-
-            <br/>
-            <div style="display:none" id="bpc_backup_number_text" >
-                <p>Back up number</p>
-            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table style="width: 100%; display:none" id="bpc_backup_number_text">
+    <thead>
+    <tr>
+        <th style="text-align: left;">Back up number:</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <select style="display:none" id="contact2" name="contact2" onchange='bpccheckvalue2(this.value)'></select>
+            <input type="text" name="contactname2" id="contact22" style='display:none'/>
         </td>
     </tr>
     <tr>
         <td>
-            <select style="display:none" id="contact2" name="contact2" onchange='bpccheckvalue2(this.value)'>
-            </select><input type="text" name="contactname2" id="contact22" style='display:none'/>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <select style="display:none" id="contact3" name="contact3" onchange='bpccheckvalue3(this.value)'>
-
-            </select><input type="text" name="contactname3" id="contact33" style='display:none'/>
+            <select style="display:none" id="contact3" name="contact3" onchange='bpccheckvalue3(this.value)'></select>
+            <input type="text" name="contactname3" id="contact33" style='display:none'/>
         </td>
     </tr>
     </tbody>
@@ -378,11 +388,11 @@ STEP 4: Confirm Appointment
 </li>
 <li>First Name</li>
 <li>
-    <input name="firstname" type="text" id="e3ve-first-name">
+    <input name="firstname" type="text" id="e3ve-first-name" style="text-transform: capitalize;">
 </li>
 <li>Last Name</li>
 <li>
-    <input name="lastname" type="text" id="e3ve-last-name">
+    <input name="lastname" type="text" id="e3ve-last-name" style="text-transform: capitalize;">
 </li>
 <li>Email Address</li>
 <li>
@@ -430,7 +440,13 @@ STEP 4: Confirm Appointment
     <tbody>
     <tr>
         <td>
-            <textarea name="yourenquiry" style="width: 100%; height: 100px;">Write you enquiries here...</textarea></td></tr></tbody></table>
+        <textarea name="yourenquiry" style="width: 100%; height: 100px;">Write you enquiries here...
+
+</textarea>
+        </td>
+    </tr>
+    </tbody>
+</table>
 
 
 
@@ -450,3 +466,5 @@ I have read & agree to the Terms & Conditions and Privacy Policy
 
 
 © 2016 BookPhoneCall.com. All rights reserved.
+
+
