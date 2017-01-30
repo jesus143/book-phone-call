@@ -3345,10 +3345,12 @@ li.ui-menu-divider.ui-widget-content {
     width: 185px;
     height: 35px;
     display: inherit;
+    background-size: 169px 50px;
 }
 .e3ve-home-time .left-time li input:hover + span,
 .e3ve-home-time .right-time li input:hover + span  {
-	    background: url(http://bookphonecall.com/wp-content/uploads/2017/01/time-hover.png) no-repeat;
+    background: url(http://bookphonecall.com/wp-content/uploads/2017/01/time-hover.png) no-repeat;
+    background-size: 169px 50px;
 }
 #directordiv, #director_column {
 	width: 90%;
