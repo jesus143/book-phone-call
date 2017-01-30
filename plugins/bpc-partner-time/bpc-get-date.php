@@ -83,6 +83,7 @@ $datenow = $_GET['datenow'];
 			$timeResultsArr = bpc_getTimeResults($timeField);
 			bpc_print_time($timeResultsArr);
 		} else {
+//		    print json_decode(array('status'=>'no current schedule'));
 			bpc_print_no_time_display();
 		}
 

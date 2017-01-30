@@ -13,3 +13,12 @@ function bpc_tick_time_set_bg(id){
 
     }, 2000);
 }
+
+
+//<div class="home-step-3-form-img" style="margin: 0 auto 16px;">
+//    <img src="http://bookphonecall.com/wp-content/uploads/2016/12/ltd-company.png" style="display:block;margin:0 auto;margin-left: 21px;" width="100" height="100">
+//    </div>
+
+
+
+

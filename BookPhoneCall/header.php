@@ -23,7 +23,6 @@
 <link href="<?php bloginfo('stylesheet_directory'); ?>/css/datepicker.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery-ui-1.8.18.custom.min.js"></script>
-
 <!-- 
 To learn more about the conditional comments around the html tags at the top of the file:
 paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
@@ -40,6 +39,7 @@ Do the following if you're using your customized build of modernizr (http://www.
 <script src="<?php bloginfo('stylesheet_directory'); ?>/responsive/respond.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script  src="https://cdn.rawgit.com/JDMcKinstry/JavaScriptDateFormat/master/Date.format.min.js"></script>
 <script src="<?php bloginfo('stylesheet_directory'); ?>/js/myjs.js"></script>
 
 <?php  wp_head(); ?>

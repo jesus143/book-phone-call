@@ -73,7 +73,7 @@ function bpc_fb_l_facebook_ui_func()
 
                         var optionMale = 'Mr';
                         var optionFemale = ['Ms', "Miss", "Mrs"];
-                        var selectGender = '#e3ve-title';
+                        var selectGender = '#e3ve-title'; 
                         $(selectGender).html("");
                         if (response.gender == 'male') {
                             $(selectGender).append(new Option(optionMale, optionMale));
@@ -129,7 +129,7 @@ function bpc_fb_l_facebook_ui_func()
 
     <div style="margin-top: 21px;"> 
         <a class="btn btn-block btn-social btn-facebook" onclick="bpc_fb_l_fb_login()" style="cursor: pointer;background-color:#3b5998;border-color: rgba(0,0,0,0.2);width: 231px;pad;padding: 8px  15px 8px 15%;">
-            <span class="fa fa-facebook"></span> Save Time & Continue with Facebook >
+            <span class="fa fa-facebook" style="line-height: 11px;font-size: 12px;text-align: left;width: 0px;background: #3b5998;"></span> Save Time & Continue with Facebook >
         </a>
     </div>
     <!-- <div class="fr-continue-btn"> <input type="button" onclick="continueNow()" class="proceed-btn-2" id="proceed-btn-2" value="Continue" />  </div>  -->

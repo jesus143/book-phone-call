@@ -2,10 +2,69 @@
 
  $directorList = '';
 
+
+
+
+  $(document).ready(function(){
+
+    $("#datepicker").html('<div style="margin:auto 0px;margin-top: 165px;"><center><i class="fa fa-circle-o-notch fa-spin" style="font-size: 41px;"></i><p>Please wait...</p></center></div>');
+
+
+    date = new Date().format('d/m/Y');
+    //alert(date);
+
+
+    $.get( "http://bookphonecall.com/wp-content/plugins/bpc-partner-time/bpc-get-date.php?datenow="+date, function( data ) {
+
+      var isNoScheduleForTheDay = data.indexOf("No Schedule Display");
+
+
+  console.log(" positio n " + isNoScheduleForTheDay);
+       //alert("test");
+      //data = JSON.parse(data);
+      console.log(data);
+      console.log('status = ' + data.status);
+      $("#datepicker").html("");
+      if(isNoScheduleForTheDay > 0) {
+          // disable date today
+          $( "#datepicker" ).datepicker({ minDate: 1, firstDay: 1});
+      } else {
+          // allow clickable date today
+          $( "#datepicker" ).datepicker({ minDate: 0, firstDay: 1});
+      }
+
+    });
+
+
+    //setTimeout(function(){
+      //$("#datepicker").html("");
+      //console.log("change status now");
+      //$( "#datepicker" ).datepicker({ minDate: 1, firstDay: 1});
+    //}, 3000)
+
+
+
+
+
+
+  });
+
+
+
   $( function() {
-    $( "#datepicker" ).datepicker({ minDate: 0, firstDay: 1});
+
+
+
+
+
+
+
+
+
+
     $('#datepicker a.ui-state-active').removeClass('ui-state-active');
     $('#datepicker a.ui-state-hover').removeClass('ui-state-hover');
+
   });
 
   $(document).on("change", "#datepicker", function () {
@@ -13,7 +72,11 @@
       document.getElementById('callbackdate').value = $datenow;
       document.getElementById('home-arrow-1').innerHTML = '<img src="http://bookphonecall.com/wp-content/themes/BookPhoneCall/images/home-arrow.png" alt="" width="" height="">';
       $.get( "/wp-content/plugins/bpc-partner-time/bpc-get-date.php?datenow="+$datenow, function( data ) {
+
+        //alert(data);
+
       $( "#bpc-select-date-response" ).html(data);
+
     });
   })  
 
